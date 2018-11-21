@@ -1,0 +1,4 @@
+#Fri Jun 22 22:07:59 CEST 2018
+base.0=/home/lulap/Programowanie/MyProjects/05_18_mean_cordova_app/mean_cordova_src/mobile/cordova-app/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
+renamed.0=classes.dex
+file.0=/home/lulap/Programowanie/MyProjects/05_18_mean_cordova_app/mean_cordova_src/mobile/cordova-app/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex

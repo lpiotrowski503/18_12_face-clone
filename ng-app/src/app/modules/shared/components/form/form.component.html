@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<form class="form__container" [formGroup]="reactiveForm" (ngSubmit)="onSubmit()" [name]="type">
+  <div class="flex" *ngIf="condition.login(type) || condition.signup(type) || condition.about(type) || condition.forget(type)" x="none" y="none">
+    <label class="label" [for]="name.email">{{ form.label.email }}</label>
+    <input class="input" [formControlName]="name.email" [name]="name.email" type="text">
+  </div>
+  <div class="flex" *ngIf="condition.signup(type) || condition.about(type)" x="none" y="none">
+    <label class="label" [for]="name.nick">{{ form.label.nick }}</label>
+    <input class="input" [formControlName]="name.nick" [name]="name.nick" type="text">
+  </div>
+  <div class="flex" *ngIf="condition.login(type) || condition.signup(type) || condition.about(type) || condition.reset(type)" x="none" y="none">
+    <label class="label" [for]="name.password">{{ form.label.password }}</label>
+    <input class="input" [formControlName]="name.password" [name]="name.password" type="text">
+  </div>
+  <div class="flex" *ngIf="condition.signup(type) || condition.about(type) || condition.reset(type)" x="none" y="none">
+    <label class="label" [for]="name.confirmPassword">{{ form.label.confirmPassword }}</label>
+    <input class="input" [formControlName]="name.confirmPassword" [name]="name.confirmPassword" type="text">
+  </div>
+  <div class="flex" *ngIf="condition.post(type)" x="none" y="none">
+    <label class="label" [for]="name.title">{{ form.label.title }}</label>
+    <input class="input" [formControlName]="name.title" [name]="name.title" type="text">
+  </div>
+  <div class="flex" *ngIf="condition.post(type)" x="none" y="none">
+    <label class="label" [for]="name.article">{{ form.label.article }}</label>
+    <textarea class="input" [formControlName]="name.article" [name]="name.article" rows="6" cols="50"></textarea>
+  </div>
+  <div class="flex">
+    <input class="btn" type="submit" [value]="form.submit[type]">
+    <input class="btn" *ngIf="condition.post(type) || condition.about(type)" type="button" [value]="form.submit['cancel']" (click)="onCancel()">
+    <input class="btn" *ngIf="condition.login(type)" type="button" [value]="form.submit['forgetBtn']" (click)="onForget()">
+  </div>
+</form>

@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<ng-template [ngIf]="!this.http.getToken()">
+  <header class="flex">
+    <h1 class="header">{{ home.header }}</h1>
+  </header>
+  <nav class="flex" y="flex-start"><a class="btn" [navi]="href.login">{{ home.link.login }}</a><a class="btn" [navi]="href.signup">{{ home.link.signup }}</a></nav>
+</ng-template>

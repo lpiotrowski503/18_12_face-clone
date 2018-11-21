@@ -1,0 +1,144 @@
+doctype
+form.form__container(
+  [formGroup] = 'reactiveForm',
+  (ngSubmit) = 'onSubmit()',
+  [name] = 'type'
+  )
+  //------------------------------------------------------------
+  //-
+  //-             E-MAIL
+  //-
+  //------------------------------------------------------------
+  div.flex(
+    *ngIf = 'condition.login(type) || condition.signup(type) || condition.about(type) || condition.forget(type)',
+    x = 'none',
+    y = 'none'
+    )
+    label.label(
+      [for] = 'name.email'
+      )
+      | {{ form.label.email }}
+    input.input(
+      [formControlName] = 'name.email',
+      [name] = 'name.email'
+      type = 'text'
+      )
+  //------------------------------------------------------------
+  //-
+  //-             NICK
+  //-
+  //------------------------------------------------------------
+  div.flex(
+    *ngIf = 'condition.signup(type) || condition.about(type)',
+    x = 'none',
+    y = 'none'
+    )
+    label.label(
+      [for] = 'name.nick'
+      )
+      | {{ form.label.nick }}
+    input.input(
+      [formControlName] = 'name.nick',
+      [name] = 'name.nick'
+      type = 'text'
+      )
+  //------------------------------------------------------------
+  //-
+  //-             PASSWORD
+  //-
+  //------------------------------------------------------------
+  div.flex(
+    *ngIf = 'condition.login(type) || condition.signup(type) || condition.about(type) || condition.reset(type)',
+    x = 'none',
+    y = 'none'
+    )
+    label.label(
+      [for] = 'name.password'
+      )
+      | {{ form.label.password }}
+    input.input(
+      [formControlName] = 'name.password',
+      [name] = 'name.password',
+      type = 'text'
+      )
+  //------------------------------------------------------------
+  //-
+  //-             CONFIRM PASSWORD
+  //-
+  //------------------------------------------------------------
+  div.flex(
+    *ngIf = 'condition.signup(type) || condition.about(type) || condition.reset(type)',
+    x = 'none',
+    y = 'none'
+    )
+    label.label(
+      [for] = 'name.confirmPassword'
+      )
+      | {{ form.label.confirmPassword }}
+    input.input(
+      [formControlName] = 'name.confirmPassword',
+      [name] = 'name.confirmPassword',
+      type = 'text'
+      )
+  //------------------------------------------------------------
+  //-
+  //-             TITLE
+  //-
+  //------------------------------------------------------------
+  div.flex(
+    *ngIf = 'condition.post(type)',
+    x = 'none',
+    y = 'none'
+    )
+    label.label(
+      [for] = 'name.title'
+      )
+      | {{ form.label.title }}
+    input.input(
+      [formControlName] = 'name.title',
+      [name] = 'name.title',
+      type = 'text'
+      )
+  //------------------------------------------------------------
+  //-
+  //-             ARTICLE
+  //-
+  //------------------------------------------------------------
+  div.flex(
+    *ngIf = 'condition.post(type)',
+    x = 'none',
+    y = 'none'
+    )
+    label.label(
+      [for] = 'name.article'
+      )
+      | {{ form.label.article }}
+    textarea.input(
+      [formControlName] = 'name.article',
+      [name] = 'name.article',
+      rows = '6',
+      cols = '50'
+      )
+  //------------------------------------------------------------
+  //-
+  //-             SUBMIT
+  //-
+  //------------------------------------------------------------
+  div.flex
+    input.btn(
+      type = 'submit',
+      [value] = `form.submit[type]`,
+      )
+      //- [disabled] = '!reactiveForm.valid'
+    input.btn(
+      *ngIf = 'condition.post(type) || condition.about(type)',
+      type = 'button',
+      [value] = `form.submit['cancel']`,
+      (click) = 'onCancel()'
+      )
+    input.btn(
+      *ngIf = 'condition.login(type)',
+      type = 'button',
+      [value] = `form.submit['forgetBtn']`,
+      (click) = 'onForget()'
+      )

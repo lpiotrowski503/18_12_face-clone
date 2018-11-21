@@ -1,0 +1,16 @@
+
+<h2>Konto</h2>
+<div class="actions" *ngIf="!show"><a class="btn" (click)="onClick()">Edytuj</a></div>
+<div *ngIf="!show">
+  <ul>
+    <li>
+      <p></p>{{ about.user?.email }}
+    </li>
+    <li>
+      <p>{{ about.user?.nick }}</p>
+    </li>
+  </ul>
+</div>
+<div *ngIf="show">
+  <app-form type="about" [edit]="about.user" (cancel)="onClick()" (submit)="onClick()"></app-form>
+</div>

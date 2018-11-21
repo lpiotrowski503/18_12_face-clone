@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<div class="container">
+  <div class="post" *ngIf="!edit">
+    <header class="header">
+      <h3 class="text">Tytuł: {{ post.title }}</h3>
+    </header>
+    <article class="article">
+      <p class="text">Treść: {{ post.article }}</p>
+    </article>
+    <footer class="footer">
+      <p class="text">Author: {{ post.author }}</p>
+      <p class="text">Data: {{ post.date | date:'d/M/yy H:mm' }}</p>
+    </footer>
+  </div>
+  <div class="flex edit" *ngIf="edit">
+    <app-form [edit]="post" type="post" (cancel)="onEdit()" (submit)="onEdit()"></app-form>
+  </div>
+  <div class="actions" *ngIf="post.editable &amp;&amp; !edit"><a class="btn" (click)="onClick('put', post)">Edytuj</a><a class="btn" (click)="onClick('delete', post)">Usuń</a></div>
+</div>

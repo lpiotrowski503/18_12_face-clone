@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<div class="container">
+  <div class="new">
+    <div class="actions" *ngIf="!show"><a class="btn" (click)="onClick()">Nowy Post</a></div>
+    <div *ngIf="show">
+      <app-form type="post" (cancel)="onClick()" (submit)="onClick()"></app-form>
+    </div>
+  </div>
+</div>
+<div *ngFor="let post of posts">
+  <app-post [post]="post"></app-post>
+</div>

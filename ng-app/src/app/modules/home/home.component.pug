@@ -1,0 +1,19 @@
+doctype
+ng-template(
+  [ngIf] = '!this.http.getToken()'
+)
+  header.flex
+    h1.header
+      | {{ home.header }}
+  nav.flex(
+    y = 'flex-start'
+    )
+    a.btn(
+      [navi] = 'href.login'
+      )
+      | {{ home.link.login }}
+    a.btn(
+      [navi] = 'href.signup'
+      )
+      | {{ home.link.signup }}
+

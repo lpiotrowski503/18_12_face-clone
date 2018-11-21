@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<div *ngIf="!forget &amp;&amp; !reset">
+  <app-form (forgetEmiter)="onForgetEmiter()"></app-form>
+</div>
+<div *ngIf="forget &amp;&amp; !reset">
+  <app-form type="forget" (submit)="onForget()"></app-form>
+</div>
+<div *ngIf="reset">
+  <app-form type="reset" [edit]="user" (submit)="onReset()"></app-form>
+</div>
+<ul>
+  <li>
+    <p>logowanie google</p>
+  </li>
+  <li>
+    <p>logowanie facebook</p>
+  </li>
+</ul>

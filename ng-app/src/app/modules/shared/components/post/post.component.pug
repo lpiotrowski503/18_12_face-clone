@@ -1,0 +1,36 @@
+doctype
+div.container
+  div.post(
+    *ngIf = '!edit'
+    )
+    header.header
+      h3.text
+        | Tytuł: {{ post.title }}
+    article.article
+      p.text
+        | Treść: {{ post.article }}
+    footer.footer
+      p.text
+        | Author: {{ post.author }}
+      p.text
+        | Data: {{ post.date | date:'d/M/yy H:mm' }}
+  div.flex.edit(
+    *ngIf = 'edit'
+    )
+    app-form(
+      [edit] = 'post',
+      type = 'post',
+      (cancel) = 'onEdit()',
+      (submit) = 'onEdit()'
+      )
+  div.actions(
+    *ngIf = 'post.editable && !edit'
+    )
+    a.btn(
+      (click) = `onClick('put', post)`
+      )
+      | Edytuj
+    a.btn(
+      (click) = `onClick('delete', post)`
+      )
+      | Usuń

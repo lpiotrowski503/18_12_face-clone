@@ -1,0 +1,9 @@
+h2
+  | Znajomi
+ul
+  div(
+    *ngFor = 'let friend of friends'
+    )
+    li
+      p
+        | {{ friend }}

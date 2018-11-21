@@ -1,0 +1,25 @@
+{
+  "home": {
+    "header": "Witaj w aplikacji Facebook-clone",
+    "link": {
+      "login": "Logowanie",
+      "signup": "Rejestracja"
+    }
+  },
+  "form": {
+    "label": {
+      "email": "Email",
+      "nick": "Nick",
+      "password": "Hasło",
+      "confirmPassword": "Powtórz hasło",
+      "title": "Tytuł",
+      "article": "Treść"
+    },
+    "submit": {
+      "login": "Zaloguj",
+      "signup": "Zarejestruj",
+      "addPost": "Wyślij"
+    }
+  },
+  "errors": {}
+}

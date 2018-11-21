@@ -1,0 +1,29 @@
+doctype
+div(
+  *ngIf = '!forget && !reset'
+  )
+  app-form(
+    (forgetEmiter) = 'onForgetEmiter()'
+    )
+div(
+  *ngIf = 'forget && !reset'
+  )
+  app-form(
+    type = 'forget',
+    (submit) = 'onForget()'
+    )
+div(
+  *ngIf = 'reset'
+  )
+  app-form(
+    type = 'reset',
+    [edit] = 'user',
+    (submit) = 'onReset()'
+    )
+ul
+  li
+    p
+      | logowanie google
+  li
+    p
+      | logowanie facebook

@@ -1,0 +1,28 @@
+h2
+  | Konto
+div.actions(
+  *ngIf = '!show'
+  )
+  a.btn(
+    (click) = 'onClick()'
+    )
+    | Edytuj
+div(
+  *ngIf = '!show'
+  )
+  ul
+    li
+      p
+      | {{ about.user?.email }}
+    li
+      p
+        | {{ about.user?.nick }}
+div(
+  *ngIf = 'show'
+  )
+  app-form(
+    type = 'about',
+    [edit] = 'about.user',
+    (cancel) = 'onClick()',
+    (submit) = 'onClick()'
+    )

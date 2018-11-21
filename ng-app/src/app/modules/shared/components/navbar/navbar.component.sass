@@ -1,0 +1,37 @@
+@import '../../../../../styles.sass'
+
+.navbar__container
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  background: $navbar-bg
+
+  .navbar-list
+    display: flex
+    list-style: none
+    justify-content: space-around
+    margin: 0
+    padding: 0
+
+    .navbar-list-item
+
+      .navbar-link
+
+        .navbar-icon
+          display: flex
+          filter: invert(1)
+          cursor: pointer
+          width: 30px
+          height: 30px
+          margin: 10px
+
+        .dashboard
+          background: url('../../../../../assets/icons/list.svg') no-repeat
+
+        .messages
+          background: url('../../../../../assets/icons/chat.svg') no-repeat
+
+        .account
+          background: url('../../../../../assets/icons/user.svg') no-repeat
+

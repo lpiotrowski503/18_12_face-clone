@@ -1,0 +1,17 @@
+nav.navbar__container
+  ul.navbar-list
+    li.navbar-list-item
+      a.navbar-link(
+        [navi]='this.store.store.data.href.dashboard'
+        )
+        span.navbar-icon.dashboard
+    li.navbar-list-item
+      a.navbar-link(
+        [navi]='this.store.store.data.href.messages'
+        )
+        span.navbar-icon.messages
+    li.navbar-list-item
+      a.navbar-link(
+        [navi]='this.store.store.data.href.account'
+        )
+        span.navbar-icon.account
